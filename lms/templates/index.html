@@ -1,0 +1,145 @@
+<%page expression_filter="h"/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.urls import reverse
+
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+
+
+
+<main id="main-content" class="js-home-page edx-home-page" aria-label="Content" data-&main-content="{quot;inlineMerchandising&quot;:{&quot;backgroundImg&quot;:{&quot;small&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-768x340_0.png&quot;,&quot;medium&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-979x314_0.png&quot;,&quot;large&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-1201x368_0.png&quot;},&quot;title&quot;:&quot;Tips for Successful Online Learning&quot;,&quot;subtitle&quot;:&quot;&quot;,&quot;cta&quot;:{&quot;text&quot;:&quot;Read more&quot;,&quot;url&quot;:&quot;https:\/\/blog.hadtech.tk\/tips-for-successful-online-learning\/&quot;}},&quot;heroMerchandising&quot;:null,&quot;trust_bar&quot;:{&quot;title&quot;:&quot;Schools and Partners&quot;,&quot;items&quot;:[{&quot;url&quot;:&quot;\/school\/mitx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/mit_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Massachusetts Institute of Technology&quot;},{&quot;url&quot;:&quot;\/school\/harvardx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/harvard_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Harvard University&quot;},{&quot;url&quot;:&quot;\/school\/uc-berkeleyx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/berkeley_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;UC Berkeley&quot;},{&quot;url&quot;:&quot;\/school\/utsystemx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/ut_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;University of Texas System&quot;},{&quot;url&quot;:&quot;\/school\/bux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/boston_logo_200x101_0_0.png&quot;,&quot;alt&quot;:&quot;Boston University&quot;},{&quot;url&quot;:&quot;\/school\/hkpolyux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/hkpolyu_upload_02052018_200x101.png&quot;,&quot;alt&quot;:&quot;The Hong Kong Polytechnic University&quot;},{&quot;url&quot;:&quot;\/school\/curtinx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/curtin-university-200x101.png&quot;,&quot;alt&quot;:&quot;Curtin University&quot;},{&quot;url&quot;:&quot;\/school\/rwthx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/rwthx-logo-200x101a.png&quot;,&quot;alt&quot;:&quot;The RWTH Aachen University&quot;},{&quot;url&quot;:&quot;\/school\/uqx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/uq_logo_purple_200x101px.png&quot;,&quot;alt&quot;:&quot;University of Queensland&quot;},{&quot;url&quot;:&quot;\/school\/usmx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/usmx_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;University System of Maryland&quot;},{&quot;url&quot;:&quot;\/school\/sorbonnex&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/sorbonne-200x101.png&quot;,&quot;alt&quot;:&quot;Sorbonne Universit\u00e9 - Cr\u00e9ateurs de Futurs Depuis 1257&quot;},{&quot;url&quot;:&quot;\/school\/getketownx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/getketown_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Getketown University&quot;},{&quot;url&quot;:&quot;\/school\/delftx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/delft_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Delft University of Technology&quot;},{&quot;url&quot;:&quot;\/school\/adelaidex&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/adelaide-200x101.png&quot;,&quot;alt&quot;:&quot;AdelaideX&quot;},{&quot;url&quot;:&quot;\/school\/anux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/anu_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Australian National University&quot;},{&quot;url&quot;:&quot;\/school\/ubcx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/ubcx-200x101_0.jpg&quot;,&quot;alt&quot;:&quot;University of British Columbia&quot;}],&quot;cta&quot;:{&quot;text&quot;:&quot;See All Schools \u0026 Partners&quot;,&quot;url&quot;:&quot;\/schools-partners&quot;}}}">
+  <section data-reactroot="" lang="en">
+  <div class="js-hero hero-container">
+  <div class="hero-img-wrapper">
+  <div class="component-responsive-image">
+  <div class="component-responsive-image-size loaded"><img alt="" src="${static.url("images/service-5-1200x320.jpg")}"></div></div></div><div class="hero-content"><h2 class="title">Chào mừng đến với HADTech. Hãy bắt đầu từ hôm nay!</h2><a href="/courses" class="btn btn-blue">Find courses</a></div></div>
+  <div class="inline-search-container">
+  <div class="inline-search-wrapper"><h2 class="search-title">What do you want to learn?</h2>
+  <div class="inline-search" role="search">
+  <div class="react-autosuggest__container">
+  <div>
+    <form method="get" action="/courses">
+      <label for="home-search" class="search-bar-label"><!-- react-text: 17 -->Search<!-- /react-text --><!-- react-text: 18 -->:<!-- /react-text --></label>
+      <input type="text" name="search_query" id="home-search" value="" autocomplete="off" role="combobox" aria-autocomplete="list" aria-owns="react-autowhatever-home-search-search-bar" aria-expanded="false" aria-haspopup="false" class="react-autosuggest__input" placeholder="" spellcheck="false">
+      <button id="edit-submit-home-search" class="btn btn-transparent edit-submit form-submit js-search-button" type="submit">
+      <span class="sr">Submit a course search</span>
+      <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span></button></div>
+    </form>
+    <div id="react-autowhatever-home-search-search-bar" class="react-autosuggest__suggestions-container"><!-- react-text: 24 --><!-- /react-text --></div></div></div></div></div>
+  
+  <div class="js-trust-bar trust-bar-container carousel-container">
+  <div class="slick-initialized slick-slider carousel-wrapper"><button class="js-carousel-nav carousel-arrow prev" disabled=""><span class="icon fa fa-chevron-left" aria-hidden="true"></span><span class="sr">Scroll carousel backwards</span></button>
+  <div class="slick-list">
+    <div class="slick-track" style="opacity: 1; transform: translate3d(0px, 0px, 0px); width: 4462.5px;">
+      <div class="slick-slide slick-active carousel-item" data-index="0" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/mitx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images1.jpg")}" class="carousel-img" alt="Massachusetts Institute of Technology"></a></div>
+      <div class="slick-slide slick-active carousel-item" data-index="1" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/harvardx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images2.jpg")}" class="carousel-img" alt="Harvard University"></a></div>
+      <div class="slick-slide slick-active carousel-item" data-index="2" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uc-berkeleyx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images3.jpeg")}" class="carousel-img" alt="UC Berkeley"></a></div>
+      <div class="slick-slide slick-active carousel-item" data-index="3" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/utsystemx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images4.jpg")}" class="carousel-img" alt="University of Texas System"></a></div>
+      <div class="slick-slide carousel-item" data-index="4" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/bux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images5.jpg")}" class="carousel-img" alt="Boston University"></a></div>
+      <div class="slick-slide carousel-item" data-index="5" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/hkpolyux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images6.png")}" class="carousel-img" alt="The Hong Kong Polytechnic University"></a></div>
+      <div class="slick-slide carousel-item" data-index="6" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/curtinx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images7.png")}" class="carousel-img" alt="Curtin University"></a></div>
+      <div class="slick-slide carousel-item" data-index="8" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uqx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/uq_logo_purple_200x101px.png" class="carousel-img" alt="University of Queensland"></a></div>
+      <div class="slick-slide carousel-item" data-index="9" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/usmx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/usmx_logo_200x101_0.png" class="carousel-img" alt="University System of Maryland"></a></div>
+      <div class="slick-slide carousel-item" data-index="10" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/sorbonnex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/sorbonne-200x101.png" class="carousel-img" alt="Sorbonne Université - Créateurs de Futurs Depuis 1257"></a></div>
+      <div class="slick-slide carousel-item" data-index="11" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/getketownx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/getketown_logo_200x101_0.png" class="carousel-img" alt="Getketown University"></a></div>
+      <div class="slick-slide carousel-item" data-index="12" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/delftx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/delft_logo_200x101_0.png" class="carousel-img" alt="Delft University of Technology"></a></div>
+      <div class="slick-slide carousel-item" data-index="13" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/adelaidex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/adelaide-200x101.png" class="carousel-img" alt="AdelaideX"></a></div>
+      <div class="slick-slide carousel-item" data-index="14" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/anux" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/anu_logo_200x101_0.png" class="carousel-img" alt="Australian National University"></a></div>
+      <div class="slick-slide carousel-item" data-index="15" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/ubcx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/ubcx-200x101_0.jpg" class="carousel-img" alt="University of British Columbia"></a></div>
+      <div class="slick-slide carousel-item" data-index="16" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/schools-partners" rel="canonical" class="cta btn btn-blue">See All Schools &amp; Partners</a></div></div></div>
+      <button class="js-carousel-nav carousel-arrow next active"><span class="icon fa fa-chevron-right" aria-hidden="true"></span><span class="sr">Scroll carousel forwards</span></button></div>
+      <div class="mobile-carousel-replacement mobile-only">
+        <div class="carousel-item"><a class="carousel-link" href="/school/mitx"><img src="/sites/default/files/school/image/banner/mit_logo_200x101_0.png" class="carousel-img" alt="Massachusetts Institute of Technology"></a></div>
+        <div class="carousel-item"><a class="carousel-link" href="/school/harvardx"><img src="/sites/default/files/school/image/banner/harvard_logo_200x101_0.png" class="carousel-img" alt="Harvard University"></a></div></div></div>
+        <div class="merchandising-banner inline-merchandising home-content">
+        <div class="component-responsive-image merchandising-banner-background">
+        <div class="component-responsive-image-size background loaded">
+        <div style="background-image: url(&quot;https://tidart.com/blog/wp-content/uploads/2019/10/facebook-conversion-lift-1200x320-1200x320.png&quot;);"></div></div></div>
+      <div class="banner-content"><h2 class="title" data-optly-4cb7aa2bf53c4cb7870e6a064f28015f="">
+        <span data-optly-4cb7aa2bf53c4cb7870e6a064f28015f="">Cách học hiệu quả nhất</span>
+
+  </h2><!-- react-text: 98 --><!-- /react-text --><a href="https://blog.hadtech.tk/tips-for-successful-online-learning/" class="btn btn-blue">Read more</a>
+  </div>
+  </div>
+  <div class="home-content popular-subjects">
+  <h2 class="title">Popular Subjects</h2>
+  <ul class="subjects-list">
+    <li class="subject-li">
+      <div class="subject-topics-wrapper">
+        <a href="/course/subject/computer-science" class="subject-link">
+          <span class="subject-icon fa fa-keyboard-o" aria-hidden="true">
+
+          </span><!-- react-text: 107 -->Computer Science<!-- /react-text --></a>
+          <ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/azure" class="topic-link">azure</a></li>
+            <li class="topic-li"><a href="https://www.hadtech.tk/learn/blockchain" class="topic-link">blockchain</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/c-programming" class="topic-link">c programming</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/devops" class="topic-link">devops</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/django" class="topic-link">django</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/full-stack-development" class="topic-link">full stack development</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/html" class="topic-link">html</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/java" class="topic-link">java</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/javascript" class="topic-link">javascript</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/python" class="topic-link">python</a></li></ul></div></li><li class="subject-li"><div class="subject-topics-wrapper"><a href="/course/subject/language" class="subject-link"><span class="subject-icon fa fa-language" aria-hidden="true"></span><!-- react-text: 133 -->Language<!-- /react-text --></a><ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/chinese" class="topic-link">chinese</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/english" class="topic-link">english</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/esl-english-as-a-second-language" class="topic-link">ESL</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/grammar" class="topic-link">grammar</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/italian" class="topic-link">italian</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/japanese" class="topic-link">japanese</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/mandarin" class="topic-link">mandarin</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/sign-language" class="topic-link">sign language</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/spanish" class="topic-link">spanish</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/writing" class="topic-link">writing</a></li></ul></div></li><li class="subject-li"><div class="subject-topics-wrapper"><a href="/course/subject/data-science" class="subject-link"><span class="subject-icon fa fa-line-chart" aria-hidden="true"></span><!-- react-text: 159 -->Data Science<!-- /react-text --></a><ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/artificial-intelligence" class="topic-link">artificial intelligence</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/big-data" class="topic-link">big data</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/cloud-computing" class="topic-link">cloud computing</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/computer-programming" class="topic-link">computer programming</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/data-analysis" class="topic-link">data analysis</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/data-mining" class="topic-link">data mining</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/machine-learning" class="topic-link">machine learning</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/power-bi" class="topic-link">power bi</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/python" class="topic-link">python</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/quantum-computing" class="topic-link">quantum computing</a></li></ul></div></li><li class="subject-li"><div class="subject-topics-wrapper"><a href="/course/subject/business-management" class="subject-link"><span class="subject-icon fa fa-briefcase" aria-hidden="true"></span><!-- react-text: 185 -->Business &amp; Management<!-- /react-text --></a><ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/business-administration" class="topic-link">business administration</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/business-analysis" class="topic-link">business analysis</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/corporate-finance" class="topic-link">corporate finance</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/economics" class="topic-link">economics</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/entrepreneurship" class="topic-link">entrepreneurship</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/finance" class="topic-link">finance</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/financial-literacy" class="topic-link">financial literacy</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/leadership" class="topic-link">leadership</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/project-management" class="topic-link">project management</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/statistics" class="topic-link">statistics</a></li></ul></div></li><li class="subject-li"><div class="subject-topics-wrapper"><a href="/learn/engineering" class="subject-link"><span class="subject-icon fa fa-cogs" aria-hidden="true"></span><!-- react-text: 211 -->Engineering<!-- /react-text --></a><ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/aerospace-engineering" class="topic-link">aerospace engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/biomedical-engineering" class="topic-link">biomedical engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/chemical-engineering" class="topic-link">chemical engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/civil-engineering" class="topic-link">civil engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/computer-engineering" class="topic-link">computer engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/electrical-engineering" class="topic-link">electrical engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/industrial-engineering" class="topic-link">industrial engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/mechanical-engineering" class="topic-link">mechanical engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/software-engineering" class="topic-link">software engineering</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/structural-engineering" class="topic-link">structural engineering</a></li></ul></div></li><li class="subject-li"><div class="subject-topics-wrapper"><a href="/course/subject/humanities" class="subject-link"><span class="subject-icon fa fa-users" aria-hidden="true"></span><!-- react-text: 237 -->Humanities<!-- /react-text --></a><ul class="topic-list"><li class="topic-li"><a href="https://www.hadtech.tk/learn/art" class="topic-link">art</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/child-development" class="topic-link">child development</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/epidemics" class="topic-link">epidemics</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/fashion" class="topic-link">fashion</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/history" class="topic-link">history</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/human-anatomy" class="topic-link">human anatomy</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/literature" class="topic-link">literature</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/psychology" class="topic-link">psychology</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/public-speaking" class="topic-link">public speaking</a></li><li class="topic-li"><a href="https://www.hadtech.tk/learn/shakespeare" class="topic-link">shakespeare</a></li></ul></div></li></ul><a href="/course" class="btn btn-edged-blue footer-link">Browse online courses</a></div></section></main>
+
+  
+</section>
+% if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="<iframe width="853" height="480" src="https://www.youtube.com/embed/SX4GXlBzF0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>></iframe>
+    </div>
+  </section>
+% endif
+
+<%block name="js_extra">
+   <script type="text/javascript">
+      $(window).load(function() {
+         if(getParameterByName('next')) {
+              $('#login').trigger("click");
+         }
+      })
+   </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+% endif
+<section id="container-fluid">
+    <div class="row">
+        <section class="highlighted-courses col-md-12">
+
+          <header class="text-center header-tab">
+            <h2>What you can learn from HADTech</h2>
+          </header>
+          <section class="row how-hadtech-works">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h3>Free Online Courses</h3>
+              <p>
+                Our courses are taught by industry experts. You can enroll anytime, anywhere.
+              </p>
+            </div>
+          
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h3>New Skills</h3>
+              <p>
+                You can share your achievement with your network when you pass a final exam.
+              </p>
+              <br><br>
+            </div>
+          
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h3>Career Opportunities</h3>
+              <p>
+                We get you jobs through Aquent, one of the largest staffing agencies in the world.
+              </p>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h3>Lifelong Learning</h3>
+              <p>
+                We produce articles, tutorials, and webinars with trailblazers in the web community.
+              </p>
+            </div>  
+          </section>
+        </section>
+</section>
