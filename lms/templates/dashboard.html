@@ -137,11 +137,6 @@ from student.models import CourseEnrollment
       </div>
     %endif
 
-    ${static.renderReact(
-      component="EnterpriseLearnerPortalBanner",
-      id="enterprise-learner-portal-banner",
-      props={}
-    )}
 </div>
 
 <section class="dashboard" id="dashboard-main">
@@ -288,21 +283,7 @@ from student.models import CourseEnrollment
       </div>
   % endif
 
-  <% account_mfe_url = getattr(settings, 'ACCOUNT_MICROFRONTEND_URL', '') or '' %>
-  % if plugins.get("coaching", {}).get("show_coaching_aside"):
-    <div class="wrapper-coaching">
-        <div class="coaching-signup">
-            <div class="coaching-prompt">
-                ${_("Take advantage of free coaching!")}
-            </div>
-            <div class="coaching-link">
-                <a class="btn-neutral" href="${account_mfe_url}">
-                  ${_("Get Started")}
-                </a>
-            </div>
-        </div>
-    </div>
-  % endif
+
 
   % if display_sidebar_on_dashboard:
     <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="Account Status Info">
@@ -386,4 +367,4 @@ from student.models import CourseEnrollment
 </section>
 
 <%include file="dashboard/_dashboard_entitlement_unenrollment_modal.html"/>
-<%include file="/experiments/dashboard_metadata.html" args='course_info=course_info'/>
+
