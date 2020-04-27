@@ -1,0 +1,429 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("About")}</%block>
+        </h1>
+        <p>
+            <%block name="pagecontent">${page_content or _("This page left intentionally blank. Feel free to add your own content.")}</%block>
+        </p>
+    </section>
+    <div class="region-column-wrapper">
+        <div class="region-columns region-container">
+            <div class="">
+                <div id="columns" class="columns clearfix">
+                    <div data-reactroot="" id="main-content" class="about-edx" role="main">
+                        <h2 id="about-edx" class="page-title">About edX</h2>
+
+                        <section id="the-mission" class="about-block the-mission active">
+                            <header class="accordion-header">
+                                <h3 class="section-title">The Mission</h3>
+                                <button class="accordion-btn">
+                                    <span class="fa fa-minus" aria-hidden="true"></span>
+                                    <span class="sr">Close the The Mission section</span>
+                                </button>
+                            </header>
+                            <div class="section-content">
+                                <ul class="mission-list">
+                                    <li>Increase access to high-quality education for everyone, everywhere</li>
+                                    <li>Enhance teaching and learning on campus and online</li>
+                                    <li>Advance teaching and learning through research</li>
+                                </ul>
+                                <button class="accordion-close-btn">
+                                    <span class="fa fa-times icon" aria-hidden="true"></span>
+                                    <span class="label">Close <span class="sr"> the The Mission section </span></span>
+                                </button>
+                            </div>
+                        </section>
+                        
+                        <section id="our-story" class="about-block our-story">
+                            <header class="accordion-header">
+                                <h3 class="section-title">Our Story</h3>
+                                <button class="accordion-btn">
+                                    <span class="fa fa-plus" aria-hidden="true"></span>
+                                    <span class="sr">Expand the Our Story section</span>
+                                </button>
+                            </header>
+                            <div class="section-content">
+                                <div class="main-text">
+                                    <p class="section-p">edX is the trusted platform for education and learning. Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies. As a global nonprofit, edX is transforming traditional education, removing the barriers of cost, location and access. Fulfilling the demand for people to learn on their own terms, edX is reimagining the possibilities of education, providing the highest-quality, stackable learning experiences including the groundbreaking MicroMasters® programs. Supporting learners at every stage, whether entering the job market, changing fields, seeking a promotion or exploring new interests, edX delivers courses for curious minds on topics ranging from data and computer science to leadership and communications. edX is where you go to learn.</p>
+                                    <div class="mobile-partners">
+                                        <a href="school/mitx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/mit_logo_200x101_0.png" alt="Massachusetts Institute of Technology">
+                                        </a>
+                                        <a href="school/harvardx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/harvard_logo_200x101_0.png" alt="Harvard University">
+                                        </a>
+                                    </div>
+                                    <h4 class="section-title">Our Global Learning Community</h4>
+                                    <p class="section-p">
+                                        <!-- react-text: 33 -->
+                                        Our students come from every country in the world! Whether you are interested in computer science, languages, engineering, psychology, writing, electronics, biology, or marketing, we have the course for you! <!-- /react-text --><a href="/course">Enroll today and learn something new.</a></p>
+                                    <h4 class="section-title">Our Difference</h4>
+                                    <p class="section-p">We were founded by and continue to be governed by colleges and universities. We are the only leading MOOC provider that is both nonprofit and open source.</p>
+                                    <p class="section-p">Open edX is the open-source platform that powers edX courses and is freely available. With <a href="https://open.edx.org/" target="_blank"> Open edX </a>, educators and technologists can build learning tools and contribute new features to the platform, creating innovative solutions to benefit students everywhere.</p>
+                                    <h4 class="section-title">Our Impact</h4>
+                                    <p class="section-p">We are proud to reflect on the impact that edX and our partner institutions have had on education and learning since our founding in 2012. Follow along on our journey and see where our movement is going next.</p>
+                                    <p class="section-p">
+                                        <a href="https://www.edx.org/sites/default/files/2020-impact-report.pdf" target="_blank"> 2020 edX Impact Report </a>
+                                    </p>
+                                </div>
+                                
+                                <div class="our-partners">
+                                    <div class="desktop-partners">
+                                        <a href="school/mitx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/mit_logo_200x101_0.png" alt="Massachusetts Institute of Technology">
+                                        </a>
+                                        <a href="school/harvardx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/harvard_logo_200x101_0.png" alt="Harvard University">
+                                        </a>
+                                        <a href="school/uc-berkeleyx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/berkeley_logo_200x101_0.png" alt="UC Berkeley">
+                                        </a>
+                                        <a href="school/utsystemx" class="image-link">
+                                            <img class="partner-image" src="https://www.edx.org/sites/default/files/school/image/banner/ut_logo_200x101_0.png" alt="University of Texas System">
+                                        </a>
+                                    </div>
+                                    <a href="/schools-partners" class="partner-link">Over 120 Institutional Partners</a>
+                                </div>
+                                
+                                <button class="accordion-close-btn">
+                                    <span class="fa fa-times icon" aria-hidden="true"></span>
+                                    <span class="label">Close <span class="sr"> the Our Story &amp; Global Reach section </span></span>
+                                </button>
+                            </div>
+                        </section>
+                        
+                        <section id="leadership" class="about-block member-section">
+                            <header class="accordion-header">
+                                <h3 class="section-title">Leadership</h3>
+                                <button class="accordion-btn">
+                                    <span class="fa fa-plus" aria-hidden="true"></span>
+                                    <span class="sr">Expand the Leadership section</span>
+                                </button>
+                            </header>
+                            
+                            <div class="section-content">
+                                <p class="section-p">Our team is devoted to transforming education. Click any of their names to read their full bio.</p>
+                                <div class="member-list">
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/anant-agarwal-141.png" class="member-img" alt="">
+                                            </button>
+                                            
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="262">
+                                                    <!-- react-text: 70 -->Anant Agarwal<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Founder and CEO</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/adam-medros_141x141.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="45771">
+                                                    <!-- react-text: 79 -->Adam Medros<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">President and co-CEO</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/jh-141.png" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="726">
+                                                    <!-- react-text: 88 -->Johannes Heinlein<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Chief Commercial Officer and Senior Vice President of Strategic Partnerships</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/stephanie_brocoum_head_shot_cropped.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="97216">
+                                                    <!-- react-text: 97 -->Stephanie Brocoum<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Chief Marketing Officer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/nell_maluf_0.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="29921">
+                                                    <!-- react-text: 106 -->Nell Ma'luf<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President and General Counsel</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/kathy_pugh_141.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="1012">
+                                                    <!-- react-text: 115 -->Kathy Pugh<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President of Services</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/lee-rubenstein_0.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="1805">
+                                                    <!-- react-text: 124 -->Lee Rubenstein<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President of Business Development</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/beaudry.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="95286">
+                                                    <!-- react-text: 133 -->JP Beaudry<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President of Engineering</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/peter-brau-141.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="72426">
+                                                    <!-- react-text: 142 -->Peter Brau<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President of Finance</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/lauren_holliday_cropped.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="96771">
+                                                    <!-- react-text: 151 -->Lauren Holliday<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Vice President of Product</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/ninahuntemann141.jpg" class="member-img" alt="">
+                                            </button><div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="15536">
+                                                    <!-- react-text: 160 -->Nina Huntemann<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Senior Director of Academics and Research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                                
+                                <button class="accordion-close-btn">
+                                    <span class="fa fa-times icon" aria-hidden="true"></span>
+                                    <span class="label">Close <span class="sr"> the Leadership section </span></span>
+                                </button>
+                            </div>
+                        </section>
+                        
+                        <section id="board-of-directors" class="about-block member-section even">
+                            <header class="accordion-header">
+                                <h3 class="section-title">Board Of Directors</h3>
+                                <button class="accordion-btn">
+                                    <span class="fa fa-plus" aria-hidden="true"></span>
+                                    <span class="sr">Expand the Board Of Directors section</span>
+                                </button>
+                            </header>
+                            
+                            <div class="section-content">
+                                <div class="member-list">
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/alan-m-garber-141.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5116">
+                                                    <!-- react-text: 180 -->Alan M. Garber, co-chair<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Provost, Harvard University</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/martin-a-schmidt-141.jpg" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5121">
+                                                    <!-- react-text: 189 -->Martin A. Schmidt, co-chair<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">Provost, Massachusetts Institute of Technology</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details">
+                                        <div class="overview">
+                                            <button class="img-btn" tabindex="-1" aria-hidden="true">
+                                                <img src="/sites/default/files/executive/photo/anant-agarwal-141.png" class="member-img" alt="">
+                                            </button>
+                                            <div class="text">
+                                                <button class="member-name" tabindex="0" aria-expanded="false" aria-controls="13616">
+                                                    <!-- react-text: 198 -->Anant Agarwal<!-- /react-text -->
+                                                    <span class="sr">Description below</span>
+                                                </button>
+                                                <p class="member-position">CEO, edX and Professor, Massachusetts Institute of Technology</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/alivisatos_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="55431"><!-- react-text: 207 -->Paul Alivisatos<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Executive Vice Chancellor &amp; Provost of the University of California, Berkeley</p></div></div></div>
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/jeff-bussgang141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="16181"><!-- react-text: 216 -->Jeff Bussgang<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">General Partner and Co-Founder, Flybridge Capital Partners</p></div></div></div>
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/katherine-lapp-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5091"><!-- react-text: 225 -->Katherine Lapp<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Executive Vice President, Harvard University</p></div></div></div>
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/israel-ruiz-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5071"><!-- react-text: 234 -->Israel Ruiz<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Executive Vice President and Treasurer, Massachusetts Institute of Technology</p></div></div></div>
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/sanjay-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5111"><!-- react-text: 243 -->Sanjay Sarma<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice President for Open Learning, Massachusetts Institute of Technology</p></div></div></div>
+                                    <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/alan-spoon-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="5106"><!-- react-text: 252 -->Alan Spoon<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Chairman of the Board, Fortive Corporation</p></div></div></div></div>
+                                    <button class="accordion-close-btn">
+                                        <span class="fa fa-times icon" aria-hidden="true"></span>
+                                        <span class="label">Close <span class="sr"> the Board Of Directors section </span></span>
+                                    </button>
+                                </div>
+                            </section>
+                            
+                            <section id="university-advisory-board" class="about-block member-section">
+                                <header class="accordion-header">
+                                    <h3 class="section-title">University Advisory Board</h3>
+                                    <button class="accordion-btn">
+                                        <span class="fa fa-plus" aria-hidden="true"></span>
+                                        <span class="sr">Expand the University Advisory Board section</span>
+                                    </button>
+                                </header>
+                                
+                                <div class="section-content">
+                                    <p class="section-p">The edX University Advisory Board is made up of senior academic leaders from edX's global university partners. They serve as the chief advisory body to edX CEO Anant Agarwal.</p>
+                                    <div class="member-list">
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/brettel_aktuell141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="13641"><!-- react-text: 273 -->Malte Brettel<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice-Rector for Industry Relations, RWTH Aachen University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/bobcaret-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="24351"><!-- react-text: 282 -->Robert L. Caret <!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Chancellor, The University System of Maryland</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/alan-m-garber-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="2976"><!-- react-text: 291 -->Alan M. Garber<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Provost, Harvard University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/robert-m-groves-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="10451"><!-- react-text: 300 -->Robert M. Groves<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Provost, Georgetown University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/marnie-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="8801"><!-- react-text: 309 -->Marnie Hughes-Warrington<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Deputy Vice-Chancellor Academic, Australian National University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/barthelemy-jobert-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="2981"><!-- react-text: 318 -->Barthelemy Jobert<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">President, Université Paris-Sorbonne</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/cpkoshland_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="21346"><!-- react-text: 327 -->Catherine P. Koshland<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice Chancellor for Undergraduate Education at the University of California, Berkeley, and the Wood-Calvert Professor in Engineering</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/morrison141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="2941"><!-- react-text: 336 -->Jean Morrison<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">University Provost and Chief Academic Officer, Boston University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/robertfmudde141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="64516"><!-- react-text: 345 -->Robert F. Mudde<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice-President Education / Vice-Rector Magnificus, Delft University of Technology</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/pascale-quester_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="35621"><!-- react-text: 354 -->Pascale Quester<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Deputy Vice-Chancellor and Vice-President (Academic), The University of Adelaide</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/martin-a-schmidt-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="2951"><!-- react-text: 363 -->Martin A. Schmidt<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Provost, Massachusetts Institute of Technology </p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/dr-andrew-szeri-bio-141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="66686"><!-- react-text: 372 -->Andrew Szeri<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Provost and Vice-President Academic, The University of British Columbia</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/deborah_terry_vc_curtin_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="96451"><!-- react-text: 381 -->Deborah Terry<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice-Chancellor, Curtin University</p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/prof.-timothy-w.-tong_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="51586"><!-- react-text: 390 -->Timothy W. Tong <!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">President, The Hong Kong Polytechnic University </p></div></div></div>
+                                        <div class="member-details"><div class="overview"><button class="img-btn" tabindex="-1" aria-hidden="true"><img src="/sites/default/files/executive/photo/joanne-wright_141.jpg" class="member-img" alt=""></button><div class="text"><button class="member-name" tabindex="0" aria-expanded="false" aria-controls="32256"><!-- react-text: 399 -->Joanne Wright<!-- /react-text --><span class="sr">Description below</span></button><p class="member-position">Vice-President and Deputy Vice-Chancellor (Academic), The University of Queensland</p></div></div></div></div>
+                                        <button class="accordion-close-btn">
+                                            <span class="fa fa-times icon" aria-hidden="true"></span>
+                                            <span class="label">Close <span class="sr"> the University Advisory Board section </span></span>
+                                        </button>
+                                    </div>
+                                </section>
+                                
+                                <section id="research" class="about-block research">
+                                    <header class="accordion-header">
+                                        <h3 class="section-title">Research &amp; Pedagogy</h3>
+                                        <button class="accordion-btn"><span class="fa fa-plus" aria-hidden="true"></span>
+                                            <span class="sr">Expand the Research &amp; Pedagogy section</span>
+                                        </button>
+                                    </header>
+                                    
+                                    <div class="section-content">
+                                        <p class="section-p">Working with our xConsortium of university partners, edX is empowering research on pedagogy or learning about learning.</p>
+                                        <p class="section-p">The online environment provides a powerful platform to conduct experiments, exploring how students learn and how faculty can best teach using a variety of novel tools and techniques.</p>
+                                        <div class="caret-link-wrapper">
+                                            <a href="/research-pedagogy " class="section-link">Find out more about Research &amp; Pedagogy at edX</a>
+                                            <span class="fa fa-caret-right icon" aria-hidden="true"></span>
+                                        </div>
+                                        <button class="accordion-close-btn"><span class="fa fa-times icon" aria-hidden="true"></span><span class="label">Close <span class="sr"> the Research &amp; Pedagogy section </span></span></button>
+                                    </div>
+                                </section>
+                                
+                                <section id="careers" class="about-block active careers">
+                                    <h3 class="section-title">Careers at edX</h3>
+                                    <div class="section-content">
+                                        <p>We are building, partnering, and promoting a software platform that brings together the best universities from all around the world to create courses for everyone, everywhere in the world—but we can’t do it without dedicated and talented people.</p>
+                                        <div class="caret-link-wrapper">
+                                            <a href="/careers" class="section-link">Find a position and apply</a>
+                                            <span class="fa fa-caret-right icon" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="caret-link-wrapper">
+                                            <a href="#about-edx" class="section-link">Back to top</a>
+                                            <span class="fa fa-caret-up icon" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div><!-- /end #columns -->
+            </div><!-- /end .region-container-inner -->
+        </div><!-- /end #region-columns -->
+      </div>
+</main>
