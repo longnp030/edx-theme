@@ -1,0 +1,106 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<%block name="headextra">
+<style type="text/css">
+.openid-login {
+    display: block;
+    position: relative;
+    left: 0;
+    margin: 100px auto;
+    top: 0;
+    z-index: 200;
+}
+
+.openid-login input[type=submit] {
+    white-space: normal;
+    height: auto !important;
+}
+
+#lean_overlay {
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+  width:100%;
+  height:100%;
+}
+
+#login-modal{
+  width: 40%;
+}
+
+.login_form label{
+  display: block;
+  font-size: 20px;
+}
+
+.login_form input{
+  display: block;
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 25px;
+}
+
+.submit{
+  display: inline-block;
+}
+
+.submit input{
+  color: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #126f9a;
+}
+
+.submit input:hover{
+ background: blue;
+}
+
+#nutbox{
+  width: 20px;
+  display: inline-block;
+  margin: 0px 10px 25px 0px;
+}
+
+.forgot{
+  margin-top: -5px;
+  font-size: 12px;
+}
+</style>
+</%block>
+
+<section id="login-modal" class="modal login-modal openid-login">
+  <div class="inner-wrapper">
+    <header>
+       <hr>
+        <p>First time here? <a href="#">Create an Account.</a></p>
+      <h2>${_("Log In")}</h2>
+    </header>
+    <form id="login_form" class="login_form" method="post" action="/openid/provider/login/">
+%if error:
+      <div id="login_error" class="modal-form-error" style="display: block;">${_("Email or password is incorrect.")}</div>
+%endif
+      <p>${_("Your username, email, and full name will be sent to {destination}, where the collection and use of this information will be governed by their terms of service and privacy policy.").format(destination=return_to)}</p>
+      <label>${_("E-mail")}</label>
+      <input type="text" name="email" placeholder="${_('E-mail')}" autofocus="autofocus" />
+      <p>The email address you used to register with My Open edX</p>
+      <label>${_("Password")}</label>
+      <input type="password" name="password" placeholder="${_('Password')}" />
+        <p class="forgot"><a href="">Forgot password?</a></p>
+     <div class="box">
+         <lable ><input type="checkbox"  name="nut" id="nutbox">Remember me</lable>
+     </div>
+      <div class="submit">
+        <input name="submit" type="submit" value="${_('Return To %s') % return_to}" />
+      </div>
+    </form>
+  </div>
+</section>
+<div id="lean_overlay"></div>
