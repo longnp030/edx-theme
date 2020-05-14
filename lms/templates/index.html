@@ -9,8 +9,42 @@ from openedx.core.djangolib.markup import HTML, Text
 %>
 
 
+  <style type="text/css">
+    .slick-initialized.slick-slider.carousel-wrapper{
+   height:100%;
+   height: 100px;
+   position: relative;
+}
 
 
+.slick-list{
+  width:100%;
+  height: 100%;
+  margin-top: 0px;
+}
+
+.active_slide{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+}
+
+.slide_active{
+  animation:chuyendong 1s forwards;
+  opacity: 1;
+}
+
+@-webkit-keyframes chuyendong{
+  from{
+     transform:translateX(-100%);
+  }
+
+  to{
+     transform:translateX(0%);
+  }
+}
+  </style>
 <main id="main-content" class="js-home-page edx-home-page" aria-label="Content" data-&main-content="{quot;inlineMerchandising&quot;:{&quot;backgroundImg&quot;:{&quot;small&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-768x340_0.png&quot;,&quot;medium&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-979x314_0.png&quot;,&quot;large&quot;:&quot;\/sites\/default\/files\/homepage\/banner\/bkg\/online-learning-inline-1201x368_0.png&quot;},&quot;title&quot;:&quot;Tips for Successful Online Learning&quot;,&quot;subtitle&quot;:&quot;&quot;,&quot;cta&quot;:{&quot;text&quot;:&quot;Read more&quot;,&quot;url&quot;:&quot;https:\/\/blog.hadtech.tk\/tips-for-successful-online-learning\/&quot;}},&quot;heroMerchandising&quot;:null,&quot;trust_bar&quot;:{&quot;title&quot;:&quot;Schools and Partners&quot;,&quot;items&quot;:[{&quot;url&quot;:&quot;\/school\/mitx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/mit_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Massachusetts Institute of Technology&quot;},{&quot;url&quot;:&quot;\/school\/harvardx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/harvard_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Harvard University&quot;},{&quot;url&quot;:&quot;\/school\/uc-berkeleyx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/berkeley_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;UC Berkeley&quot;},{&quot;url&quot;:&quot;\/school\/utsystemx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/ut_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;University of Texas System&quot;},{&quot;url&quot;:&quot;\/school\/bux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/boston_logo_200x101_0_0.png&quot;,&quot;alt&quot;:&quot;Boston University&quot;},{&quot;url&quot;:&quot;\/school\/hkpolyux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/hkpolyu_upload_02052018_200x101.png&quot;,&quot;alt&quot;:&quot;The Hong Kong Polytechnic University&quot;},{&quot;url&quot;:&quot;\/school\/curtinx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/curtin-university-200x101.png&quot;,&quot;alt&quot;:&quot;Curtin University&quot;},{&quot;url&quot;:&quot;\/school\/rwthx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/rwthx-logo-200x101a.png&quot;,&quot;alt&quot;:&quot;The RWTH Aachen University&quot;},{&quot;url&quot;:&quot;\/school\/uqx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/uq_logo_purple_200x101px.png&quot;,&quot;alt&quot;:&quot;University of Queensland&quot;},{&quot;url&quot;:&quot;\/school\/usmx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/usmx_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;University System of Maryland&quot;},{&quot;url&quot;:&quot;\/school\/sorbonnex&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/sorbonne-200x101.png&quot;,&quot;alt&quot;:&quot;Sorbonne Universit\u00e9 - Cr\u00e9ateurs de Futurs Depuis 1257&quot;},{&quot;url&quot;:&quot;\/school\/getketownx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/getketown_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Getketown University&quot;},{&quot;url&quot;:&quot;\/school\/delftx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/delft_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Delft University of Technology&quot;},{&quot;url&quot;:&quot;\/school\/adelaidex&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/adelaide-200x101.png&quot;,&quot;alt&quot;:&quot;AdelaideX&quot;},{&quot;url&quot;:&quot;\/school\/anux&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/banner\/anu_logo_200x101_0.png&quot;,&quot;alt&quot;:&quot;Australian National University&quot;},{&quot;url&quot;:&quot;\/school\/ubcx&quot;,&quot;img&quot;:&quot;\/sites\/default\/files\/school\/image\/logo\/ubcx-200x101_0.jpg&quot;,&quot;alt&quot;:&quot;University of British Columbia&quot;}],&quot;cta&quot;:{&quot;text&quot;:&quot;See All Schools \u0026 Partners&quot;,&quot;url&quot;:&quot;\/schools-partners&quot;}}}">
   <section data-reactroot="" lang="en">
   <div class="js-hero hero-container">
@@ -32,25 +66,33 @@ from openedx.core.djangolib.markup import HTML, Text
     <div id="react-autowhatever-home-search-search-bar" class="react-autosuggest__suggestions-container"><!-- react-text: 24 --><!-- /react-text --></div></div></div></div></div>
   
   <div class="js-trust-bar trust-bar-container carousel-container" style="padding-top: 10px;">
-  <div class="slick-initialized slick-slider carousel-wrapper"><button class="js-carousel-nav carousel-arrow prev" disabled=""><span class="icon fa fa-chevron-left" aria-hidden="true"></span><span class="sr">Scroll carousel backwards</span></button>
+   <div class="slick-initialized slick-slider carousel-wrapper"><button class="js-carousel-nav carousel-arrow prev" disabled=""><span class="icon fa fa-chevron-left" aria-hidden="true"></span><span class="sr">Scroll carousel backwards</span></button>
   <div class="slick-list">
     <div class="slick-track" style="opacity: 1; transform: translate3d(0px, 0px, 0px); width: 4462.5px;">
-      <div class="slick-slide slick-active carousel-item" data-index="0" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/mitx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images1.jpg")}" class="carousel-img" alt="Massachusetts Institute of Technology"></a></div>
+      <div class="active_slide slide_active">
+         <div class="slick-slide slick-active carousel-item" data-index="0" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/mitx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images1.jpg")}" class="carousel-img" alt="Massachusetts Institute of Technology"></a></div>
       <div class="slick-slide slick-active carousel-item" data-index="1" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/harvardx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images2.jpg")}" class="carousel-img" alt="Harvard University"></a></div>
       <div class="slick-slide slick-active carousel-item" data-index="2" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uc-berkeleyx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images3.jpeg")}" class="carousel-img" alt="UC Berkeley"></a></div>
       <div class="slick-slide slick-active carousel-item" data-index="3" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/utsystemx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images4.jpg")}" class="carousel-img" alt="University of Texas System"></a></div>
-      <div class="slick-slide carousel-item" data-index="4" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/bux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images5.jpg")}" class="carousel-img" alt="Boston University"></a></div>
+      </div>
+      <div class="active_slide">
+         <div class="slick-slide carousel-item" data-index="4" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/bux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images5.jpg")}" class="carousel-img" alt="Boston University"></a></div>
       <div class="slick-slide carousel-item" data-index="5" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/hkpolyux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images6.png")}" class="carousel-img" alt="The Hong Kong Polytechnic University"></a></div>
       <div class="slick-slide carousel-item" data-index="6" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/curtinx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images7.png")}" class="carousel-img" alt="Curtin University"></a></div>
       <div class="slick-slide carousel-item" data-index="8" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uqx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/uq_logo_purple_200x101px.png" class="carousel-img" alt="University of Queensland"></a></div>
-      <div class="slick-slide carousel-item" data-index="9" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/usmx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/usmx_logo_200x101_0.png" class="carousel-img" alt="University System of Maryland"></a></div>
+      </div>
+      <div class="active_slide">
+         <div class="slick-slide carousel-item" data-index="9" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/usmx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/usmx_logo_200x101_0.png" class="carousel-img" alt="University System of Maryland"></a></div>
       <div class="slick-slide carousel-item" data-index="10" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/sorbonnex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/sorbonne-200x101.png" class="carousel-img" alt="Sorbonne Université - Créateurs de Futurs Depuis 1257"></a></div>
       <div class="slick-slide carousel-item" data-index="11" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/getketownx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/getketown_logo_200x101_0.png" class="carousel-img" alt="Getketown University"></a></div>
       <div class="slick-slide carousel-item" data-index="12" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/delftx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/delft_logo_200x101_0.png" class="carousel-img" alt="Delft University of Technology"></a></div>
+      </div>
+       <div class="active_slide">
       <div class="slick-slide carousel-item" data-index="13" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/adelaidex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/adelaide-200x101.png" class="carousel-img" alt="AdelaideX"></a></div>
       <div class="slick-slide carousel-item" data-index="14" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/anux" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/anu_logo_200x101_0.png" class="carousel-img" alt="Australian National University"></a></div>
       <div class="slick-slide carousel-item" data-index="15" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/ubcx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/ubcx-200x101_0.jpg" class="carousel-img" alt="University of British Columbia"></a></div>
       <div class="slick-slide carousel-item" data-index="16" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/schools-partners" rel="canonical" class="cta btn btn-blue">See All Schools &amp; Partners</a></div></div></div>
+    </div>
       <button class="js-carousel-nav carousel-arrow next active"><span class="icon fa fa-chevron-right" aria-hidden="true"></span><span class="sr">Scroll carousel forwards</span></button></div>
       <div class="mobile-carousel-replacement mobile-only">
         <div class="carousel-item"><a class="carousel-link" href="/school/mitx"><img src="/sites/default/files/school/image/banner/mit_logo_200x101_0.png" class="carousel-img" alt="Massachusetts Institute of Technology"></a></div>
@@ -149,3 +191,44 @@ from openedx.core.djangolib.markup import HTML, Text
     </div>
 
 </section>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded",function(){
+var nuttrai=document.querySelector(".js-carousel-nav.carousel-arrow.prev");
+var nutphai=document.querySelector(".js-carousel-nav.carousel-arrow.next");
+var slide=document.querySelectorAll(".active_slide");
+console.log(slide);
+var k=1;
+nutphai.addEventListener('click',function(){
+    for (var i = 0; i < slide.length; i++) {
+    slide[i].classList.remove("slide_active");
+    }
+
+    slide[k].classList.add("slide_active");
+      k++;
+    if (k==slide.length) {
+    nuttrai.removeAttribute("disabled");
+    nutphai.setAttribute("disabled","");
+    k=1;
+    }
+});
+  var h=slide.length-2;
+  nuttrai.addEventListener('click',function(){
+    console.log(h);
+    if (h>=0) {
+    for (var i=0; i < slide.length; i++) {
+    slide[i].classList.remove("slide_active");
+    }
+    slide[h].classList.add("slide_active");
+     h--;
+    } 
+    if (h<0) {
+      nutphai.removeAttribute("disabled");
+      nuttrai.setAttribute("disabled","");
+      h=slide.length-2;
+    }
+   });
+
+});
+
+</script>
