@@ -10,22 +10,19 @@ from openedx.core.djangolib.markup import HTML, Text
 
 
   <style type="text/css">
-    .slick-initialized.slick-slider.carousel-wrapper{
-   height:100%;
-   height: 100px;
-   position: relative;
-}
 
 
 .slick-list{
   width:100%;
   height: 100%;
   margin-top: 0px;
+  position: relative;
 }
 
 .active_slide{
   position: absolute;
   width: 100%;
+  height: 100%;
   left: 0;
   opacity: 0;
 }
@@ -74,14 +71,12 @@ from openedx.core.djangolib.markup import HTML, Text
       <div class="slick-slide slick-active carousel-item" data-index="1" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/harvardx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images2.jpg")}" class="carousel-img" alt="Harvard University"></a></div>
       <div class="slick-slide slick-active carousel-item" data-index="2" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uc-berkeleyx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images3.jpeg")}" class="carousel-img" alt="UC Berkeley"></a></div>
       <div class="slick-slide slick-active carousel-item" data-index="3" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/utsystemx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images4.jpg")}" class="carousel-img" alt="University of Texas System"></a></div>
-      </div>
-      <div class="active_slide">
          <div class="slick-slide carousel-item" data-index="4" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/bux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images5.jpg")}" class="carousel-img" alt="Boston University"></a></div>
       <div class="slick-slide carousel-item" data-index="5" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/hkpolyux" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images6.png")}" class="carousel-img" alt="The Hong Kong Polytechnic University"></a></div>
+    </div>
+    <div class="active_slide">
       <div class="slick-slide carousel-item" data-index="6" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/curtinx" rel="canonical" class="carousel-link"><img src="${static.url("images/banner/images7.png")}" class="carousel-img" alt="Curtin University"></a></div>
       <div class="slick-slide carousel-item" data-index="8" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/uqx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/uq_logo_purple_200x101px.png" class="carousel-img" alt="University of Queensland"></a></div>
-      </div>
-      <div class="active_slide">
          <div class="slick-slide carousel-item" data-index="9" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/usmx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/usmx_logo_200x101_0.png" class="carousel-img" alt="University System of Maryland"></a></div>
       <div class="slick-slide carousel-item" data-index="10" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/sorbonnex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/sorbonne-200x101.png" class="carousel-img" alt="Sorbonne Université - Créateurs de Futurs Depuis 1257"></a></div>
       <div class="slick-slide carousel-item" data-index="11" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/getketownx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/getketown_logo_200x101_0.png" class="carousel-img" alt="Getketown University"></a></div>
@@ -91,7 +86,10 @@ from openedx.core.djangolib.markup import HTML, Text
       <div class="slick-slide carousel-item" data-index="13" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/adelaidex" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/adelaide-200x101.png" class="carousel-img" alt="AdelaideX"></a></div>
       <div class="slick-slide carousel-item" data-index="14" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/anux" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/banner/anu_logo_200x101_0.png" class="carousel-img" alt="Australian National University"></a></div>
       <div class="slick-slide carousel-item" data-index="15" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/ubcx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/ubcx-200x101_0.jpg" class="carousel-img" alt="University of British Columbia"></a></div>
-      <div class="slick-slide carousel-item" data-index="16" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/schools-partners" rel="canonical" class="cta btn btn-blue">See All Schools &amp; Partners</a></div></div></div>
+       <div class="slick-slide carousel-item" data-index="15" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/ubcx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/ubcx-200x101_0.jpg" class="carousel-img" alt="University of British Columbia"></a></div>
+        <div class="slick-slide carousel-item" data-index="15" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/school/ubcx" rel="canonical" class="carousel-link"><img src="/sites/default/files/school/image/logo/ubcx-200x101_0.jpg" class="carousel-img" alt="University of British Columbia"></a></div>
+      <div class="slick-slide carousel-item" data-index="16" tabindex="-1" style="outline: none; width: 178.5px;"><a href="/schools-partners" rel="canonical" class="cta btn btn-blue">See All Schools &amp; Partners</a></div></div>
+    </div>
     </div>
       <button class="js-carousel-nav carousel-arrow next active"><span class="icon fa fa-chevron-right" aria-hidden="true"></span><span class="sr">Scroll carousel forwards</span></button></div>
       <div class="mobile-carousel-replacement mobile-only">
